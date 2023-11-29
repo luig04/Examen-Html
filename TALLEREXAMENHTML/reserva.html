@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="css/reserva.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>HOTEL.CH</title>
+</head>
+
+<body>
+    <section class="main-section">
+        <h2>Realizar Reserva</h2>
+        <form action="procesar_reserva.php" method="post">
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <label for="tipo_cliente">Tipo de Cliente:</label>
+    <select id="tipo_cliente" name="tipo_cliente" required>
+    <option value="individual">Individual</option>
+    <option value="empresa">Empresa</option>
+    </select>
+    <label for="num_tarjeta_credito">Número de Tarjeta de Crédito:</label>
+    <input type="text" id="num_tarjeta_credito" name="num_tarjeta_credito" placeholder="XXXX-XXXX-XXXX-XXXX" 
+                required="required" pattern="\d{4}-\d{4}-\d{4}-\d{4}" title="Formato válido: XXXX-XXXX-XXXX-XXXX" 
+                disabled>
+    <label for="tipo_reserva">Preferencia de Reserva:</label>
+    <select id="tipo_reserva" name="tipo_reserva" required> 
+    <option value="dormir">Dormir únicamente</option>
+    <option value="media_pension">Media Pensión</option>
+    <option value="pension_completa">Pensión Completa</option>    
+    <label for="fecha">Fecha de llegada:</label>
+    <input type="date" id="fecha" name="fecha" required>
+    <label for="noches">Número de noches:</label>
+    <input type="number" id="noches" name="noches" min="1" required>
+    <label for="tipo_reserva">Tipo de Reserva:</label>
+    <select id="tipo_reserva" name="tipo_reserva" required>
+        <option value="anticipada">Reserva Anticipada</option>
+        <option value="telefonica">Reserva Telefónica</option>
+    </select>
+    <label for="preferencia_fumador">Preferencia de Fumador:</label>
+    <input type="checkbox" id="preferencia_fumador" name="preferencia_fumador">
+    <button type="submit">Reservar</button>
+    </form>
+</body>
+</html>
